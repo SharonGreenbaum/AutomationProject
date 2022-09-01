@@ -1,0 +1,1 @@
+{"uuid":"9b01fc92-12fa-498b-b6ba-55f734d60aea","name":"AuthenticationTestSuit.RegistrationTest","children":["affaceae-eff7-41ff-9932-f1b56dad7d8f"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1661331125401,"stop":1661331129104}],"afters":[],"start":1661331125355,"stop":1661331134396}

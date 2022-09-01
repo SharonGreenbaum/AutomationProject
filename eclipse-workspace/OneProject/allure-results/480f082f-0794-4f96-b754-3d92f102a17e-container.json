@@ -1,0 +1,1 @@
+{"uuid":"480f082f-0794-4f96-b754-3d92f102a17e","name":"Tests.checkListCategoryTest","children":["21fa45ae-2f96-4ef3-9608-d064157d89e5"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1661845759020,"stop":1661845765541}],"afters":[],"start":1661845758929,"stop":1661845782726}

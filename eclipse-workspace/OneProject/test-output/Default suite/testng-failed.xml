@@ -5,11 +5,8 @@
     <classes>
       <class name="Tests.ShoppingCartTest">
         <methods>
-          <include name="MyTearDown"/>
           <include name="moveToCashPage"/>
-          <include name="RemoveProductTest"/>
           <include name="setUp"/>
-          <include name="checkDeleveryPrice"/>
         </methods>
       </class> <!-- Tests.ShoppingCartTest -->
     </classes>

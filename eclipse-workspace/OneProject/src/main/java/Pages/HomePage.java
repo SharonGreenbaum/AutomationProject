@@ -23,7 +23,6 @@ public class HomePage extends Helper {
 	List<String> testDataToCompareList = new LinkedList<String>();
 	private String actualError = "true";
 
-
 	public HomePage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 		this.driver = driver;
@@ -37,23 +36,25 @@ public class HomePage extends Helper {
 	private void initBys() {
 		selectorList.put("Search", By.id("search-input"));
 		selectorList.put("ShoppingCart", By.xpath("//a[@href='/cart\']"));
-		selectorList.put("Shopping", By.linkText("סל הקניות"));
+		selectorList.put("Shopping", By.className("drawer__title"));
 	}
+	
 	private void initElements() {
 		menu = driver.findElements(By.className("header__linklist-item"));
 		Categories =driver.findElements(By.className("list-collections__item-image-wrapper"));
 		elementList.put("Search", driver.findElement(selectorList.get("Search")));
-		elementList.put("ShoppingCart", driver.findElement(selectorList.get("ShoppingCart")));
-
+		elementList.put("ShoppingCart", driver.findElement(selectorList.get("ShoppingCart")));	
 	}
+	
 	public void goToPage() {
 		visit("https://www.oneprojectshop.com");
 	}
+	
 	public void enterToCategory(int menuChoice)
 	{
 		menu.get(menuChoice).click();
-
 	}
+	
 	public void NameCategory()
 	{
 		String[] arrOfStrings = {
@@ -64,7 +65,8 @@ public class HomePage extends Helper {
 				"תינוקות",
 				"BRANDS",
 				"TRENDING NOW",
-				"BACK TO SCHOOL"
+				"BACK TO SCHOOL",
+				"OUTLET"
 				};
 		for (String curr : arrOfStrings) {
 			testDataToCompareList.add(curr);
@@ -89,13 +91,12 @@ public class HomePage extends Helper {
 		}
 		return actualError;
 
-	}	
+	}
+	
 	public  void printCategory()
 	{
 		initBys();
-
 		System.out.println(menu.size());
-		
 		for(int i=0; i< menu.size();i++)
 		{
 		System.out.println(menu.get(i).getText());
@@ -106,13 +107,11 @@ public class HomePage extends Helper {
 	{
 		elementList.get("Search").sendKeys(Proudct);
 		elementList.get("Search").sendKeys(Keys.ENTER);
-
-
 	}
+	
 	public void enterShoppingCart()
 	{
 		elementList.get("ShoppingCart").click();
-
 	}
 	
 	public String checkOpenShoppingCart()

@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import Pages.HomePage;
 import Utils.DriverUtils;
+import io.qameta.allure.Step;
 
 public class HomePageTest {
 	
@@ -17,19 +18,18 @@ public class HomePageTest {
 		private String expectedError = "true";
 		final String[] PRODUCT_TO_SEARCH = { "שמלות", "חולצות", "ג'ינסים" };
 
-
-
 		@BeforeClass
 		void setUp() {
 			driver = DriverUtils.createDriverObj(2);
 		}
 		
+		@Step("This is step 1")
 		@Test(priority = 1, description = "check the name of the cetagory is correct")
 		void testCaseCategoryNames()
 		{
-			HomePage SPage = new HomePage(driver, wait);
-			SPage.NameCategory();
-			actualError =SPage.CompareLists();
+			HomePage SPage1 = new HomePage(driver, wait);
+			SPage1.NameCategory();
+			actualError =SPage1.CompareLists();
 			Assert.assertEquals(actualError, expectedError);
 		}
 		
@@ -45,13 +45,13 @@ public class HomePageTest {
 		@Test(priority = 3, description = "enter to shopping cart")
 		void testEnterShoopingCart()
 		{
-			expectedError ="סל קניות";
+			expectedError ="סל הקניות";
 			HomePage SPage = new HomePage(driver, wait);
-			SPage.enterShoppingCart();
 			actualError =SPage.checkOpenShoppingCart();
 			Assert.assertEquals(actualError, expectedError);
 			SPage.takeScreenShot("shopingCartEnter");
 		}
+		
 		@AfterClass
 		public void MyTearDown() {
 			driver.quit();

@@ -14,19 +14,18 @@ public class ShoppingCartTest {
 	private String expectedError=null;
 	private double priceForFreeDelevery =199.00;
 
-
 	@BeforeClass
 	void setUp() {
 		driver = DriverUtils.createDriverObj(2);
 	}
 		
-   @Test(priority = 1, description = "check if the delevery is free")
+   @Test(priority = 2, description = "check if the delevery is free")
 	void checkDeleveryPrice()
 	{
-		ProudctPage pPage = new  ProudctPage(driver, wait);
-		pPage.addToCart();
-		double sum = pPage.countSumProudects();
-		String actualError = pPage.checkDeleveyMassage();
+		ProudctPage pPage1 = new  ProudctPage(driver, wait);
+		pPage1.addToCart();
+		double sum = pPage1.countSumProudects();
+		String actualError = pPage1.checkDeleveyMassage();
 		double costForDelevery = priceForFreeDelevery-sum;
 		String costForDeleveryString = String.format("%.02f", costForDelevery);		
 		if (sum>199)
@@ -39,11 +38,10 @@ public class ShoppingCartTest {
 			expectedError ="נותר לך "+ costForDeleveryString + " ₪ " +"נוספים לקבלת משלוח חינם!";
 
 		}
-
 		Assert.assertEquals(actualError, expectedError);
 	}
 	
-	@Test(priority = 2, description = "remove product from cart")
+	@Test(priority = 1, description = "remove product from cart")
 	void RemoveProductTest() {
 		ProudctPage pPage = new  ProudctPage(driver, wait);
 		pPage.addToCart();
@@ -64,6 +62,5 @@ public class ShoppingCartTest {
 	public void MyTearDown() {
 		driver.quit();
 	}
-
 }
 

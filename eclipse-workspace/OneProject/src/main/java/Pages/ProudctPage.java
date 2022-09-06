@@ -16,7 +16,6 @@ public class ProudctPage extends Helper {
 		private HashMap<String, By> selectorList;
 		private HashMap<String, WebElement> elementList;	
 
-
 		public ProudctPage(WebDriver driver, WebDriverWait wait) {
 			super(driver, wait);
 			this.driver = driver;
@@ -33,12 +32,13 @@ public class ProudctPage extends Helper {
 		selectorList.put("RemoveProduct",(By.linkText("הסר")));
 		selectorList.put("minusProduct",(By.cssSelector("a[href*='/cart/change']")));
 		selectorList.put("emtyShoppingCar", By.cssSelector(".drawer__content--center  p"));
-		selectorList.put("button",(By.className("button--full")));
+		selectorList.put("button",(By.xpath("//button[@name='checkout']")));
 		}
 		
 		private void initElements() {
 			elementList.put("AddToCart", driver.findElement(selectorList.get("AddToCart")));
-			Price =driver.findElements(By.className("price--highlight"));
+//			Price =driver.findElements(By.className("price--highlight"));
+			Price =driver.findElements(By.className("price"));
 		}
 		
 		public void goToPage() {
@@ -86,7 +86,8 @@ public class ProudctPage extends Helper {
 
 		public void moveToCash()
 		{
-			driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS) ;
+			driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS) ;
+			waitUntilClickabilityElementLocated(selectorList.get("button"));
 		    click(selectorList.get("button"));
 		}
 		

@@ -34,14 +34,12 @@ public class LoginPage extends Helper {
 		selectorList.put("email", By.id("customer[email]"));
 		selectorList.put("password", By.id("customer[password]"));
 		button = driver.findElements(saveButton);
-
 	}
 
 	private void initElements() {
 		elementList.put("email", driver.findElement(selectorList.get("email")));
 		elementList.put("password", driver.findElement(selectorList.get("password")));
 		selectorList.put("errorEmail", By.cssSelector(".banner__content"));
-
 	}
 	
 	private void openPage() {
@@ -55,7 +53,6 @@ public class LoginPage extends Helper {
 
 	public void saveLogin() {
 		button.get(1).click();
-
 	}
 
 	public String getErrorString(String str) {

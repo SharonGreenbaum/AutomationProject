@@ -1,0 +1,1 @@
+{"uuid":"3817535e-04af-4509-8dba-32f6e66f3fb0","name":"AuthenticationTestSuit.LoginTest","children":["8cab5112-511b-421f-923e-4a7cd05d510a"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1661351852196,"stop":1661351887628}],"afters":[],"start":1661351851964,"stop":1661351899079}

@@ -1,0 +1,1 @@
+{"uuid":"dd07eadf-b5dd-4a31-9b6c-772b022b45ef","name":"AuthenticationTestSuit.RegistrationTest","children":["b2ac2d63-586c-47e6-8e17-3d7c6da96823"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1661337481822,"stop":1661337485283}],"afters":[],"start":1661337481786,"stop":1661337487166}
